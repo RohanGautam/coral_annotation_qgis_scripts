@@ -1,4 +1,4 @@
-# Convinience scripts for annotation
+# Convenience scripts for annotation
 
 This repository contains some simple QGIS python scripts to make coral annotation easier. Mainly, these scripts aim to automate the following tasks:
 
@@ -7,7 +7,7 @@ This repository contains some simple QGIS python scripts to make coral annotatio
 
 ## Installation
 
-1. Download the repository folder:
+1. Download the repository folder: [Zip file](https://github.com/RohanGautam/coral_annotation_qgis_scripts/archive/refs/heads/main.zip)
 2. Open QGIS (3+). Go to `Settings` > `User Profiles` > `Open Active Profile Folder`
    ![Alt text](assets/image.png)
 
