@@ -8,8 +8,7 @@ class CreateLayersAlgorithm(QgsProcessingAlgorithm):
     """
     This algorithm creates relavant temporary scratch layers for coral annotation.
 
-    All Processing algorithms should extend the QgsProcessingAlgorithm
-    class.
+    All Processing algorithms should extend the QgsProcessingAlgorithm class.
     """
 
     # Constants used to refer to parameters and outputs. They will be
