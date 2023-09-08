@@ -35,7 +35,7 @@ from qgis.processing import alg
 @alg.output(type=alg.BOOL, name="indicator", label="indicator")
 def processAlgorithm(instance, parameters, context, feedback, inputs):
     """
-    Here is where the processing itself takes place.
+    Create temporary polygon layers with predefined names used for coral annotation.
     """
     min_ring_num = instance.parameterAsInt(parameters, "MIN_RING_NUM", context)
     max_ring_num = instance.parameterAsInt(parameters, "MAX_RING_NUM", context)
