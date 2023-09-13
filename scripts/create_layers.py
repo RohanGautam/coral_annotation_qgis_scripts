@@ -16,6 +16,7 @@ from qgis.processing import alg
 @alg.input(type=alg.BOOL, name="UNCERTAIN", label="Uncertain", default=True)
 @alg.input(type=alg.BOOL, name="WHOLE_CORAL", label="Whole Coral", default=True)
 @alg.input(type=alg.BOOL, name="CENTER", label="Center", default=True)
+@alg.input(type=alg.BOOL, name="IGNORE", label="Ignore", default=True)
 @alg.input(
     type=alg.INT,
     name="MIN_RING_NUM",
@@ -44,6 +45,7 @@ def processAlgorithm(instance, parameters, context, feedback, inputs):
     uncertain = instance.parameterAsBool(parameters, "UNCERTAIN", context)
     whole_coral = instance.parameterAsBool(parameters, "WHOLE_CORAL", context)
     center = instance.parameterAsBool(parameters, "CENTER", context)
+    ignore = instance.parameterAsBool(parameters, "IGNORE", context)
 
     feedback.pushInfo(f"Min ring num: {min_ring_num}, type {type(min_ring_num)}")
     feedback.pushInfo(f"og: {overgrowth}, type {type(overgrowth)}")
@@ -69,5 +71,7 @@ def processAlgorithm(instance, parameters, context, feedback, inputs):
         addTmpLayer("whole_coral")
     if center:
         addTmpLayer("center")
+    if ignore:
+        addTmpLayer("ignore")
 
     return {"OUTPUT": True}
