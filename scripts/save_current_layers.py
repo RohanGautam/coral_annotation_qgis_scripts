@@ -4,6 +4,7 @@ from pathlib import Path
 from qgis.PyQt.QtCore import QCoreApplication
 from qgis.core import *
 from qgis.processing import alg
+from qgis.utils import iface
 
 
 @alg(
@@ -23,6 +24,11 @@ def save_layers_alg(instance, parameters, context, feedback, inputs):
 
     if to_save:
         # path of QGIS project file
+        if QgsProject.instance().absoluteFilePath() == "":
+            raise QgsProcessingException(
+                "The project file is not saved. Save the project file before saving the layers"
+            )
+
         project_file_path = Path(QgsProject.instance().absoluteFilePath())
         project_directory_path = project_file_path.parent
 
